@@ -1,4 +1,4 @@
-salt-formula-nova (2016.8.1-1) unstable; urgency=medium
+salt-formula-swift (2016.8.1-1) unstable; urgency=medium
 
   * Initial release (Closes: #833761)
 
