@@ -1,17 +1,5 @@
 salt-formula-swift (2016.8.3-1) unstable; urgency=medium
 
-  * New upstream version
-
- -- Filip Pytloun <filip@pytloun.cz>  Wed, 10 Aug 2016 11:44:58 +0200
-
-salt-formula-swift (2016.8.2-1) unstable; urgency=medium
-
-  * New upstream version
-
- -- Filip Pytloun <filip@pytloun.cz>  Tue, 09 Aug 2016 16:27:45 +0200
-
-salt-formula-swift (2016.8.1-1) unstable; urgency=medium
-
   * Initial release (Closes: #833761)
 
- -- Filip Pytloun <filip@pytloun.cz>  Mon, 08 Aug 2016 11:03:20 +0200
+ -- Filip Pytloun <filip@pytloun.cz>  Wed, 10 Aug 2016 11:44:58 +0200
