@@ -61,7 +61,7 @@ swift_ring_container_create:
 {%- for device in ring.devices %}
 
 {%- if ring.get('object', True) %}
-swift_ring_object_{{ring_num}}_{{ device.address }}:
+swift_ring_object_{{ring_num}}_{{ device.address }}_{{ device.device }}:
   cmd.wait:
     - name: swift-ring-builder {{ object_builder }} add r{{ device.get('region', ring.region) }}z{{ device.get('zone', loop.index) }}-{{ device.address }}:{{ device.get("object_port", 6000) }}/{{ device.device }} {{ device.get("weight", 100) }}
     - watch:
@@ -71,7 +71,7 @@ swift_ring_object_{{ring_num}}_{{ device.address }}:
 {%- endif %}
 
 {%- if ring_account %}
-swift_ring_account_{{ device.address }}:
+swift_ring_account_{{ device.address }}_{{ device.device }}:
   cmd.wait:
     - name: swift-ring-builder {{ account_builder }} add r{{ device.get('region', ring.region) }}z{{ device.get('zone', loop.index) }}-{{ device.address }}:{{ device.get("account_port", 6002) }}/{{ device.device }} {{ device.get("weight", 100) }}
     - watch:
@@ -81,7 +81,7 @@ swift_ring_account_{{ device.address }}:
 {%- endif %}
 
 {%- if ring_container %}
-swift_ring_container_{{ device.address }}:
+swift_ring_container_{{ device.address }}_{{ device.device }}:
   cmd.wait:
     - name: swift-ring-builder {{ container_builder }} add r{{ device.get('region', ring.region) }}z{{ device.get('zone', loop.index) }}-{{ device.address }}:{{ device.get("container_port", 6001) }}/{{ device.device }} {{ device.get("weight", 100) }}
     - watch:
