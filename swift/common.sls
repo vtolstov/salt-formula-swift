@@ -22,6 +22,16 @@ swift_common_packages:
   - require:
     - file: {{ common.swift_dir }}
 
+{{ common.swift_dir }}/internal-client.conf:
+  file.managed:
+  - source: salt://swift/files/{{ common.version }}/internal-client.conf
+  - template: jinja
+  - user: root
+  - group: swift
+  - mode: 644
+  - require:
+    - file: {{ common.swift_dir }}
+
 {{ common.swift_dir }}/memcache.conf:
   file.managed:
   - source: salt://swift/files/{{ common.version }}/memcache.conf
